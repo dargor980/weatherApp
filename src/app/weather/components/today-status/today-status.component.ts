@@ -9,7 +9,7 @@ import { Weather } from 'src/app/models/weather.model';
 export class TodayStatusComponent implements OnInit {
 
   @Input() gradeSystem: string = 'celsius';
-
+  date: string = new Date().toString();
   @Input() weather: Weather = {
     location:{
       name: '',

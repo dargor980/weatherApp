@@ -46,7 +46,7 @@ export interface Current{
     gust_kph: number;
 }
 
-export interface NextDays extends Forecast{
+export interface NextDays{
     location: LocationWeather;
     current: Current;
     forecast: Forecast;
@@ -54,14 +54,15 @@ export interface NextDays extends Forecast{
 }
 
 export interface Forecast{
-    forecastday: ForecastDay;
+    forecastday: ForecastDay[];
 }
 
 export interface ForecastDay{
     date: string;
     date_epoch: number;
     day: Day;
-    hour: Hour;
+    astro: Astro;
+    hour: Hour[];
 
 
 }
@@ -82,12 +83,10 @@ export interface Day{
     avghumidity: number;
     daily_will_it_rain : number;
     daily_chance_of_rain: number;
-    daily_will_it_snown: number;
+    daily_will_it_snow: number;
     daily_chance_of_snow: number;
     condition: Condition;
     uv: number;
-    astro: Astro;
-
 }
 
 export interface Astro{

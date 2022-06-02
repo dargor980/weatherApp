@@ -28,13 +28,20 @@ export class WeatherService {
         } else {
           data.current.condition.text = this.Conditions.filter((condition: { code: number; day: string, night: string, icon: number }) => condition.code === data.current.condition.code)[0].night;
         }
-        data.current.condition.icon = this.Conditions.filter((condition: { code:number; day: string; nigth: string; icon: number}) => condition.code === data.current.condition.code)[0].icon;
+        data.current.condition.icon = this.Conditions.filter((condition: { code:number; day: string; night: string; icon: number}) => condition.code === data.current.condition.code)[0].icon;
       })
     );
   }
 
   getForecastWeather(query: string){
-    return this.http.get<NextDays[]>(`${this.apiUrl}forecast.json?key=${this.apiKey}&q=${query}&days=5&aqi=no&alerts=no`);
+    return this.http.get<NextDays>(`${this.apiUrl}forecast.json?key=${this.apiKey}&q=${query}&days=5&aqi=no&alerts=no`)
+    .pipe(
+      tap(data => {
+        data.forecast.forecastday.forEach(day => {
+          day.day.condition.icon = this.Conditions.filter((condition : { code: number; day:string; night: string; icon: number }) => condition.code === day.day.condition.code)[0].icon;
+        })
+      })
+    )
   }
 
 }
