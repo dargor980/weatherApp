@@ -1,0 +1,35 @@
+.grid-days{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4em;
+    margin: 0 12em;
+    div{
+        background-color: #1E213A;
+        .day{
+            font-family: Raleway;
+            color: #E7E7EB;
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            font-weight: 500;
+        }
+        .temperature{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-left: 2em;
+            margin-right: 2em;
+            .max{
+                font-family: Raleway;
+                color: #E7E7EB;
+                margin-right: 4em;
+                font-weight: 500;
+            }
+            .min{
+                font-family: Raleway;
+                font-weight: 500;
+                color: #A09FB1;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<div class="today-status-container">
+    <div class="header">
+        <button mat-button>Buscar Ubicación</button>
+        <button mat-mini-fab>
+            <mat-icon>location_searching</mat-icon>
+        </button>
+    </div>
+    <img *ngIf="weather.current.is_day else night" src="https://cdn.weatherapi.com/weather/128x128/day/{{weather.current.condition.icon}}.png" alt="" class="weather-icon">
+    <ng-template #night>
+        <img src="https://cdn.weatherapi.com/weather/128x128/night/{{weather.current.condition.icon}}.png" alt="" class="weather-icon">
+    </ng-template>
+    <h1 class="temperature" *ngIf="gradeSystem === 'celsius'">{{weather.current.temp_c}}°C</h1>
+    <h1 class="temperature" *ngIf="gradeSystem === 'fahrenheit'">{{weather.current.temp_f}}°F</h1>
+    <h2 class="description">{{weather.current.condition.text}}</h2>
+    <p class="today-date">Hoy • Mié. 1 Junio </p>
+    <p class="location"><mat-icon>my_location</mat-icon>{{weather.location.name}} , {{weather.location.region}}, {{weather.location.country}}</p>
+</div>

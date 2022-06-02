@@ -1,0 +1,49 @@
+.todayHighlights{
+    margin: 8em 12em 0 12em;
+    h2{
+        color: #E7E7EB;
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.8em;
+        line-height: 28px;
+
+
+    }
+    .grid-highlights{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 4em;
+        div {
+            .status{
+                color: #E7E7EB;
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.3em;
+                line-height: 19px;
+                margin-top: 1em;
+                
+            }
+            .status-value{
+                span{
+                    color: #E7E7EB;
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 2em;
+                    line-height: 19px;
+                }
+                color: #E7E7EB;
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 2.4em;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+            text-align: center;
+            background-color: #1E213A;
+        }
+    }
+}

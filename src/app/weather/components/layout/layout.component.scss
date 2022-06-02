@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    height: 100%;
+    .sidebar{
+        height: 100%;
+        width: 31%;
+        max-width: 31em;
+        margin: 0;
+        background-color: #1E213A;
+        background-image: url("../../../../assets/images/Cloud-background.png");
+        background-image: linear-gradient(rgba(30, 33, 58, 0.95) 100%,rgba(30, 33, 58, 0.95) 100%), url("../../../../assets/images/Cloud-background.png");
+        background-position: 50% 20%;
+        background-repeat: no-repeat;
+    }
+    .main{
+        h1{
+            text-align: center;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 600;
+            color: #E7E7EB;
+            font-size: 3em;
+            margin-bottom: 1em;
+        }
+        display: block;
+        width: 100%;
+        margin: 0;
+        background-color: #100E1D;
+        .buttons{
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 4em;
+            margin-right: 13em;
+            button {
+                background-color: #585676;
+                color: #E7E7EB;
+                margin-left: 2em;
+                &.active{
+                    background-color: #E7E7EB;
+                    color: #110E3C
+                }
+            }
+        }
+
+        .footer{
+            color: #A09FB1;
+            margin-top: 10em;
+            margin-left: 12em;
+            text-align: center;
+            p {
+                font-family: Raleway;
+                font-style: normal;
+                font-weight: 600;
+                a {
+                    text-decoration: none;
+                    color: #A09FB1;
+                }
+                a:hover{
+                    color: azure;
+                }
+            }
+        }
+        
+    }
+}

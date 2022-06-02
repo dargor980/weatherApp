@@ -1,0 +1,29 @@
+<div class="todayHighlights">
+    <h2>Estado de hoy</h2>
+    <div class="grid-highlights">
+        <div>
+            <h3 class="status">Viento</h3>
+            <h4 class="status-value" *ngIf="unitSystem === 'metric'"><span>{{currentStatus.wind_kph}}</span>kph</h4>
+            <h4 class="status-value" *ngIf="unitSystem === 'imperial'"><span>{{currentStatus.wind_mph}}</span>mph</h4>
+            
+        </div>
+
+        <div>
+            <h3 class="status">Humedad</h3>
+            <h4 class="status-value"><span>{{currentStatus.humidity}}</span>%</h4>
+            <div>
+                <mat-progress-bar mode="determinate" value="{{currentStatus.humidity}}"></mat-progress-bar>
+            </div>
+        </div>
+        <div>
+            <h3 class="status">Índice UV</h3>
+            <h4 class="status-value"><span>{{currentStatus.uv}}</span></h4>
+
+        </div>
+        <div>
+            
+           <h3 class="status">Presión Atmosférica</h3>
+           <h4 class="status-value"><span>{{currentStatus.pressure_mb}}</span> mb</h4>
+        </div>
+    </div>
+</div>

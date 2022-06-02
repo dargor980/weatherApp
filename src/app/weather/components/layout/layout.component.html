@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="sidebar">
+        <app-today-status [weather]="currentWeather" [gradeSystem]="gradeSystem"></app-today-status>
+    </div>
+    <div class="main">
+        <div class="buttons">
+            <button mat-mini-fab (click)="toggleGradeSystem('fahrenheit')" [class.active]="activeFahrenheit">
+                <h3>°F</h3>
+            </button>
+            <button mat-mini-fab (click)="toggleGradeSystem('celsius')" [class.active]="activeCelsius">
+                <h3>°C</h3>
+            </button>
+            <button mat-button (click)="toggleUnitSystem()">
+                <span *ngIf="unitSystem === 'metric'">Métrico</span>
+                <span *ngIf="unitSystem === 'imperial'">Imperial</span>
+            </button>
+            
+        </div>
+        <h1>Weather App</h1>
+        <app-next-days [gradeSystem]="gradeSystem"></app-next-days>
+        <app-today-highlights [currentStatus]="currentWeather.current" [unitSystem]="unitSystem"></app-today-highlights>
+        <div class="footer">
+            <p>Creado por: <a href="">Germán Contreras</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.today-status-container{
+    justify-content: center;
+    align-items: center;
+    .weather-icon{
+        align-items: center;
+        margin-top: 2em;
+        margin-left: 10em;
+        margin-top: 13em;
+    }
+    .temperature{
+        font-family: Raleway;
+        margin-top: 1em;
+        color: #E7E7EB;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10em;
+        text-align: center;
+    }
+    .description{
+        font-family: Raleway;
+        margin-top: 3em;
+        text-align: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2em;
+        color: #E7E7EB;
+    }
+    .today-date{
+        font-family: Raleway;
+        color: #88869D;
+        text-align: center;
+        font-weight: 500;
+    }
+    .location{
+        font-family: Raleway;
+        text-align: center;
+        color: #88869D;
+        font-weight: 600;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 1em 0 1em;
+        button{
+            background-color: #6E707A;
+            color: #E7E7EB;
+            font-weight: 500;
+            font-family: Raleway;
+        }
+    }
+}
