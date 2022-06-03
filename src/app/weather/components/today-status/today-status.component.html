@@ -1,8 +1,8 @@
 <div class="today-status-container">
     <div class="header">
-        <button mat-button>Buscar Ubicación</button>
-        <button mat-mini-fab>
-            <mat-icon>location_searching</mat-icon>
+        <button mat-button (click)="searchLocation()">Buscar Ubicación</button>
+        <button mat-mini-fab (click)="geolocate()">
+            <mat-icon>my_location</mat-icon>
         </button>
     </div>
     <div class="icon-container">
@@ -15,5 +15,5 @@
     <h1 class="temperature" *ngIf="gradeSystem === 'fahrenheit'">{{weather.current.temp_f}}°F</h1>
     <h2 class="description">{{weather.current.condition.text}}</h2>
     <p class="today-date">Hoy •{{ date | date:'dd MMMM YYYY'}} </p>
-    <p class="location"><mat-icon>my_location</mat-icon>{{weather.location.name}} , {{weather.location.region}}, {{weather.location.country}}</p>
+    <p class="location"><mat-icon>location_on</mat-icon> {{weather.location.name}} , {{weather.location.region}}, {{weather.location.country}}</p>
 </div>

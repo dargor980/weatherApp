@@ -1,0 +1,43 @@
+<div class="search-container">
+    <div class="close">
+        <button mat-button class="closebtn" (click)="closeSearch()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="search-form">
+        <mat-form-field appearance="legacy">
+            <mat-label><mat-icon matSuffix>search</mat-icon> Buscar Ubicación</mat-label>
+            <input matInput placeholder="Ej: Concepción"> 
+        </mat-form-field>
+
+        <button mat-button>Buscar</button>
+    </div>
+    
+    <ul>
+        <li>
+            <div>
+                <h1>Santiago</h1>
+            </div>
+            <div>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h1>Concepción</h1>
+            </div>
+            <div>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h1>Valparaíso</h1>
+            </div>
+            <div>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </div>
+        </li>
+    </ul>
+    
+</div>

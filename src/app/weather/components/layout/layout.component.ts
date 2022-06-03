@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
+import { LocationService } from 'src/app/services/location.service';
 import { Weather } from 'src/app/models/weather.model';
 import conditions from 'src/app/models/weather_conditions.json';
+import cities from 'src/app/models/cities.json';
+import { first, pipe, startWith } from 'rxjs';
+
 
 @Component({
   selector: 'app-layout',
@@ -13,6 +17,8 @@ export class LayoutComponent implements OnInit {
   gradeSystem: string = 'celsius';
   activeCelsius: boolean = true;
   activeFahrenheit: boolean = false;
+  myLocation: string = '';
+  showSearch: boolean = true;
 
   currentWeather: Weather ={
     location:{
@@ -58,17 +64,22 @@ export class LayoutComponent implements OnInit {
 
   conditions: any = conditions;
 
+  Cities: any = cities;
+
+
   constructor(
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private location: LocationService
   ) { }
 
   ngOnInit(): void {
-    this.getCurrentWeather()
+    this.getLocation();
+    console.log(this.Cities.cities[0].name);
   }
 
-  getCurrentWeather(){
-    this.weatherService.getCurrentWeather('Santiago')
-    .subscribe(data => {
+  getCurrentWeather(position: string){
+    this.weatherService.getCurrentWeather(position)
+    .subscribe((data) => {
       this.currentWeather = data;
     });
   }
@@ -87,6 +98,26 @@ export class LayoutComponent implements OnInit {
     }
     console.log(this.activeCelsius, this.activeFahrenheit);
   }
+
+  getLocation(){
+    this.location.getPosition()
+    .then(pos => {
+      this.myLocation = pos.lat + ',' + pos.lng;
+      this.getCurrentWeather(this.myLocation);
+      console.log("aaaa")
+    })
+    .catch(err => {
+      console.log(err);
+      this.myLocation = 'santiago';
+      this.getCurrentWeather(this.myLocation);
+    });
+  }
+
+  toggleSearchComponent(){
+    this.showSearch = !this.showSearch;
+  }
+    
+  
 
 
 }

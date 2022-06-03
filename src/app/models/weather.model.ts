@@ -133,3 +133,7 @@ export interface Hour{
     gust_kph: number,
     uv: number;
 }
+
+export interface myLocation{
+    ip: string;
+}

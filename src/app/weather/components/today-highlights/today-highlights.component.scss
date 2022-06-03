@@ -15,6 +15,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 4em;
         div {
+            border-radius: 5px;
             .status{
                 color: #E7E7EB;
                 font-family: Raleway;

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Weather } from 'src/app/models/weather.model';
 
 @Component({
@@ -9,6 +9,8 @@ import { Weather } from 'src/app/models/weather.model';
 export class TodayStatusComponent implements OnInit {
 
   @Input() gradeSystem: string = 'celsius';
+  @Output() locate = new EventEmitter();
+  @Output() search = new EventEmitter();
   date: string = new Date().toString();
   @Input() weather: Weather = {
     location:{
@@ -51,13 +53,25 @@ export class TodayStatusComponent implements OnInit {
       gust_kph: 0,
     }
   }
+
+  location: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
     
   }
-  ngOnChanges(){
-    console.log("today-status", this.weather)
+
+  geolocate(){
+    this.locate.emit();
+  }
+
+  searchLocation(){
+    this.search.emit();
+  }
+
+  ngOnDestroy(){
+    console.log("mori uwu ");
   }
   
 }

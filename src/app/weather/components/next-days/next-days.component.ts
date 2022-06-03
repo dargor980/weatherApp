@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
 import { NextDays, Weather } from 'src/app/models/weather.model';
+
 
 @Component({
   selector: 'app-next-days',
@@ -10,6 +11,7 @@ import { NextDays, Weather } from 'src/app/models/weather.model';
 export class NextDaysComponent implements OnInit {
 
   @Input() gradeSystem: string = 'celsius';
+  
   nextDays: NextDays = {
     location: {
       name: "",
@@ -142,8 +144,10 @@ export class NextDaysComponent implements OnInit {
     this.weatherService.getForecastWeather('Santiago')
     .subscribe(data => {
       this.nextDays = data;
-      console.log("dias",this.nextDays)
+      console.log("icons",this.nextDays.forecast.forecastday[1].day.condition.icon)
     });
   }
+
+  
 
 }

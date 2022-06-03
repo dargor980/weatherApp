@@ -1,6 +1,9 @@
 <div class="container">
     <div class="sidebar">
-        <app-today-status [weather]="currentWeather" [gradeSystem]="gradeSystem"></app-today-status>
+        <app-today-status *ngIf="!showSearch; else searchComponent" [weather]="currentWeather" [gradeSystem]="gradeSystem" (locate)="getLocation()" (search)="toggleSearchComponent()"></app-today-status>
+        <ng-template #searchComponent>
+            <app-search (close)="toggleSearchComponent()"></app-search>
+        </ng-template>
     </div>
     <div class="main">
         <div class="buttons">
