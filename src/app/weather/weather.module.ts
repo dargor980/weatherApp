@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormsModule } from '@angular/forms';
 import { WeatherRoutingModule } from './weather-routing.module';
 import { TodayStatusComponent } from './components/today-status/today-status.component';
 import { TodayHighlightsComponent } from './components/today-highlights/today-highlights.component';
@@ -32,6 +33,7 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
   ]
 })
 export class WeatherModule { }

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
+import { LocationService } from 'src/app/services/location.service';
 import { NextDays, Weather } from 'src/app/models/weather.model';
 
 
@@ -8,11 +9,16 @@ import { NextDays, Weather } from 'src/app/models/weather.model';
   templateUrl: './next-days.component.html',
   styleUrls: ['./next-days.component.scss']
 })
-export class NextDaysComponent implements OnInit {
+export class NextDaysComponent implements OnInit, OnChanges {
 
   @Input() gradeSystem: string = 'celsius';
-  
-  nextDays: NextDays = {
+  @Input() 
+    set myLocation(location: string | null){
+      if(location){
+        this.weatherService.getForecastWeather(location);
+      }
+    }
+  @Input() nextDays: NextDays = {
     location: {
       name: "",
       region: "",
@@ -133,20 +139,18 @@ export class NextDaysComponent implements OnInit {
   };
 
   constructor(
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private locationService: LocationService
   ) { }
 
   ngOnInit(): void {
-    this.getNextDays();
+    
   }
 
-  getNextDays(){
-    this.weatherService.getForecastWeather('Santiago')
-    .subscribe(data => {
-      this.nextDays = data;
-      console.log("icons",this.nextDays.forecast.forecastday[1].day.condition.icon)
-    });
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("cambiooo");
   }
+
 
   
 

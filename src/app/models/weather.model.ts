@@ -134,6 +134,12 @@ export interface Hour{
     uv: number;
 }
 
-export interface myLocation{
-    ip: string;
+export interface LocationDTO{
+    id: number;
+    name: string;
+    region: string;
+    country: string;
+    lat: number;
+    lon: number;
+    url: string;
 }

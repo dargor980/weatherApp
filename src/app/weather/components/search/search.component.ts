@@ -1,11 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {
-  trigger,
-  state,
-  transition,
-  animate,
-  style
-} from '@angular/animations';
+import { Component, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { trigger, state, transition, animate, style } from '@angular/animations';
+import { LocationDTO } from 'src/app/models/weather.model';
+import { LocationService } from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-search',
@@ -17,9 +13,17 @@ import {
 })
 export class SearchComponent implements OnInit {
 
-  @Output() close: EventEmitter<void> = new EventEmitter<void>();
+  search: string = '';
 
-  constructor() { }
+  cities: LocationDTO[] = [];
+  searching: boolean = false;
+
+  @Output() close: EventEmitter<void> = new EventEmitter<void>();
+  @Output() city: EventEmitter<LocationDTO> = new EventEmitter<LocationDTO>();
+
+  constructor(
+    private locationService: LocationService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -27,5 +31,21 @@ export class SearchComponent implements OnInit {
   closeSearch(){
     this.close.emit();
   }
+
+  searchCity(){
+    this.locationService.searchLocation(this.search)
+    .subscribe((cities) => {
+      this.cities = cities;
+      this.searching = true;
+    });
+  }
+
+  selectCity(city: LocationDTO){
+    this.city.emit(city);
+    this.locationService.setLocation(city.url);
+    this.closeSearch();
+  }
+
+  
 
 }

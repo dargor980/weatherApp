@@ -7,37 +7,25 @@
     <div class="search-form">
         <mat-form-field appearance="legacy">
             <mat-label><mat-icon matSuffix>search</mat-icon> Buscar Ubicación</mat-label>
-            <input matInput placeholder="Ej: Concepción"> 
+            <input matInput type="text" placeholder="Ej: Concepción" name="search" [(ngModel)]="search"> 
         </mat-form-field>
 
-        <button mat-button>Buscar</button>
+        <button mat-button (click)="searchCity()">Buscar</button>
     </div>
     
+    <div *ngIf="cities.length === 0 && searching" class="not-found">
+        <h1>No se encontraron resultados</h1>
+    </div>
     <ul>
-        <li>
+        <li *ngFor="let city of cities" (click)="selectCity(city)">
             <div>
-                <h1>Santiago</h1>
+                <h1>{{city.name}}, {{city.region}}</h1>
             </div>
             <div>
                 <mat-icon>keyboard_arrow_right</mat-icon>
             </div>
         </li>
-        <li>
-            <div>
-                <h1>Concepción</h1>
-            </div>
-            <div>
-                <mat-icon>keyboard_arrow_right</mat-icon>
-            </div>
-        </li>
-        <li>
-            <div>
-                <h1>Valparaíso</h1>
-            </div>
-            <div>
-                <mat-icon>keyboard_arrow_right</mat-icon>
-            </div>
-        </li>
+        
     </ul>
     
 </div>

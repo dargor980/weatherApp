@@ -31,6 +31,7 @@
         padding: 0;
         margin-top: 3em;
         list-style: none;
+        
         li{
             display: flex;
             justify-content: space-between;
@@ -56,6 +57,15 @@
 
         }
     }
+    div.not-found{
+        
+        color: #E7E7EB;
+        font-size: 1.2em;
+        font-family: Raleway;
+        font-weight: 500;
+        margin: 0.5em 0 0.5em 0.5em;
+        
+    }
     
 }
 mat-form-field{
@@ -73,6 +83,272 @@ mat-form-field{
 mat-form-field.mat-form-field{
     width: 60%;
     font-size: 1.2em;
+}
+@media screen and(min-width: 1281px) and (max-width: 1440px){
+    .search-container{ 
+        margin-left: 1em;    
+        div{     
+                 
+           
+            button {
+                color: #E7E7EB;
+                margin-right: 1.3em;
+                background-color: #3C47E9;
+                margin-top: 1em;
+                margin-left: 0.6em;
+                height: 3.0em;
+                
+            }
+            
+        }
+       
+        ul{           
+            margin-top: 1em;
+            list-style: none;         
+            li{               
+                width: 21em;             
+                h1{                 
+                    font-size: 1.3em;
+                }
+            }           
+        }
+        div.not-found{
+            
+            color: #E7E7EB;
+            font-size: 1em;
+            font-family: Raleway;
+            font-weight: 500;
+            margin: 0.5em 0 0.5em 0.5em;
+            
+        }
+        
+    }
+    mat-form-field{
+        color: #616475;
+        mat-label{
+            color: #616475
+        }
+        input{
+            color: #E7E7EB
+        }
+        input::placeholder{
+            color: #616475
+        }
+    }
+    mat-form-field.mat-form-field{
+        width: 60%;
+        font-size: 1.6em;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width: 1024px){
+    .search-container{ 
+        margin-left: 1em;    
+        div{     
+                 
+           
+            button {
+                color: #E7E7EB;
+                margin-right: 1.3em;
+                background-color: #3C47E9;
+                margin-top: 1em;
+                margin-left: 0.6em;
+                height: 2.6em;
+                
+            }
+            
+        }
+       
+        ul{           
+            margin-top: 1em;
+            list-style: none;         
+            li{               
+                width: 18em;             
+                h1{                 
+                    font-size: 1em;
+                }
+            }           
+        }
+        div.not-found{
+            
+            color: #E7E7EB;
+            font-size: 1em;
+            font-family: Raleway;
+            font-weight: 500;
+            margin: 0.5em 0 0.5em 0.5em;
+            
+        }
+        
+    }
+    mat-form-field{
+        color: #616475;
+        mat-label{
+            color: #616475
+        }
+        input{
+            color: #E7E7EB
+        }
+        input::placeholder{
+            color: #616475
+        }
+    }
+    mat-form-field.mat-form-field{
+        width: 60%;
+        font-size: 1.4em;
+    }
+}
+
+
+@media screen and (min-width:480px) and (max-width: 768px){
+    .search-container{ 
+        margin-left: 1em;    
+        div{     
+                 
+           
+            button {
+                color: #E7E7EB;
+                margin-right: 2em;
+                background-color: #3C47E9;
+                margin-top: 1em;
+                margin-left: 0.5em;
+                height: 2.5em;
+                
+            }
+            
+        }
+       
+        ul{           
+            margin-top: 1em;
+            list-style: none;         
+            li{               
+                width: 13em;             
+                h1{                 
+                    font-size: 0.8em;
+                }
+            }           
+        }
+        div.not-found{
+            
+            color: #E7E7EB;
+            font-size: 1em;
+            font-family: Raleway;
+            font-weight: 500;
+            margin: 0.5em 0 0.5em 0.5em;
+            
+        }
+        
+    }
+    mat-form-field{
+        color: #616475;
+        mat-label{
+            color: #616475
+        }
+        input{
+            color: #E7E7EB
+        }
+        input::placeholder{
+            color: #616475
+        }
+    }
+    mat-form-field.mat-form-field{
+        width: 60%;
+        font-size: 1.2em;
+    }
+    
+}
+
+@media screen and (max-width: 479px){
+    .search-container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        margin: 1em 0 1em 1em;
+        .close{
+            display: flex;
+            justify-content: flex-end;
+            .closebtn{
+                background-color: transparent;
+            }
+        }
+        div{
+            display:flex;
+            justify-content: space-between;
+            .search-form{
+                color: white;
+                
+            }
+            button {
+                color: #E7E7EB;
+                margin-right: 2em;
+                background-color: #3C47E9;
+                margin-top: 1em;
+                height: 3em;
+                
+            }
+            
+        }
+       
+        ul{
+            padding: 0;
+            margin-top: 3em;
+            padding-bottom: 3em;
+            list-style: none;
+            
+            li{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #616475;
+                width: 23em;
+                border: 1px solid #616475;
+                margin: 1em 0 1em 0;
+                h1{
+                    font-family: Raleway;
+                    color: #E7E7EB;
+                    font-weight: 500;
+                    font-size: 1.2em;
+                    line-height: 35px;
+                    margin: 0.5em 0 0.5em 0.5em;
+                }
+            }
+            li:hover{
+                color: #E7E7EB;
+                border: 1px solid #E7E7EB;
+                transition: all ease-out .5s;
+                cursor: pointer;
+    
+            }
+        }
+        div.not-found{
+            
+            color: #E7E7EB;
+            font-size: 1.2em;
+            font-family: Raleway;
+            font-weight: 500;
+            margin: 0.5em 0 0.5em 0.5em;
+            
+        }
+        
+    }
+    mat-form-field{
+        color: #616475;
+        mat-label{
+            color: #616475
+        }
+        input{
+            color: #E7E7EB
+        }
+        input::placeholder{
+            color: #616475
+        }
+    }
+    mat-form-field.mat-form-field{
+        width: 60%;
+        font-size: 1.2em;
+        margin-left: 2em;
+    }
+    
 }
 
 

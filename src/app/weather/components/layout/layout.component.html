@@ -2,7 +2,7 @@
     <div class="sidebar">
         <app-today-status *ngIf="!showSearch; else searchComponent" [weather]="currentWeather" [gradeSystem]="gradeSystem" (locate)="getLocation()" (search)="toggleSearchComponent()"></app-today-status>
         <ng-template #searchComponent>
-            <app-search (close)="toggleSearchComponent()"></app-search>
+            <app-search (close)="toggleSearchComponent()" (city)="setLocation($event)"></app-search>
         </ng-template>
     </div>
     <div class="main">
@@ -20,10 +20,10 @@
             
         </div>
         <h1>Weather App</h1>
-        <app-next-days [gradeSystem]="gradeSystem"></app-next-days>
+        <app-next-days [gradeSystem]="gradeSystem" [nextDays]="nextDays" [myLocation]="myLocation"></app-next-days>
         <app-today-highlights [currentStatus]="currentWeather.current" [unitSystem]="unitSystem"></app-today-highlights>
         <div class="footer">
-            <p>Creado por: <a href="">Germán Contreras</a></p>
+            <p>Creado por: <a href="https://github.com/dargor980/weatherApp">Germán Contreras</a></p>
         </div>
     </div>
 </div>

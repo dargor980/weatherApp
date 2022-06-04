@@ -48,7 +48,58 @@
         }
     }
 }
-
+@media screen and (min-width:1281px) and (max-width: 1440px){
+    .todayHighlights{
+        margin: 1em 10em 0 10em;
+        h2{
+            color: #E7E7EB;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5em;
+            line-height: 28px;
+    
+    
+        }
+        .grid-highlights{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1em;
+            div {
+                border-radius: 5px;
+                .status{
+                    color: #E7E7EB;
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1.2em;
+                    line-height: 19px;
+                    margin-top: 1em;
+                    
+                }
+                .status-value{
+                    span{
+                        color: #E7E7EB;
+                        font-family: Raleway;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.2em;
+                        line-height: 19px;
+                    }
+                    color: #E7E7EB;
+                    font-family: Raleway;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 2.3em;
+                    margin-top: 1em;
+                    margin-bottom: 1em;
+                }
+                text-align: center;
+                background-color: #1E213A;
+            }
+        }
+    }
+}
 
 @media screen and (min-width:1025px) and (max-width: 1280px){
     .todayHighlights{
@@ -213,6 +264,9 @@
 
 @media screen and (max-width: 479px){
     .todayHighlights{
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-top: 2em;
         h2{
             color: #E7E7EB;
             font-family: Raleway;
@@ -224,7 +278,7 @@
     
         }
         .grid-highlights{
-            display: block;
+            display: block;           
             div {
                 border-radius: 5px;
                 .status{
